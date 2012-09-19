@@ -1,0 +1,287 @@
+2012/09/19 15:33:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(624): CApplication->getDb()
+#5 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(User))
+#7 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/models/User.php(33): CActiveRecord::model('User')
+#8 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/components/UserIdentity.php(27): User::model()
+#9 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#10 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#13 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/controllers/SiteController.php(94): CModel->validate()
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#15 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#19 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#20 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/testdrive/index.php/site/login
+HTTP_REFERER=http://localhost/testdrive/index.php/site/login
+---
+2012/09/19 15:33:59 [error] [exception.CDbException] exception 'CDbException' with message 'Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias.' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php:940
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(1232): CJoinElement->getColumnSelect(Array)
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(418): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#3 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), false)
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1459): CActiveRecord->query(Object(CDbCriteria))
+#5 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/components/UserIdentity.php(27): CActiveRecord->findByAttributes(Array)
+#6 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#7 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#8 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#9 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#10 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/controllers/SiteController.php(94): CModel->validate()
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#13 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#16 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#17 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/site/login
+HTTP_REFERER=http://localhost/testdrive/index.php/site/login
+---
+2012/09/19 15:35:20 [error] [exception.CDbException] exception 'CDbException' with message 'Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias.' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php:940
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(1232): CJoinElement->getColumnSelect(Array)
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(418): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#3 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), false)
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1459): CActiveRecord->query(Object(CDbCriteria))
+#5 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/components/UserIdentity.php(27): CActiveRecord->findByAttributes(Array)
+#6 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#7 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#8 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#9 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#10 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/controllers/SiteController.php(94): CModel->validate()
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#13 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#16 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#17 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/site/login
+HTTP_REFERER=http://localhost/testdrive/index.php/site/login
+---
+2012/09/19 15:35:28 [error] [exception.CDbException] exception 'CDbException' with message 'Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias.' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php:940
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(1232): CJoinElement->getColumnSelect(Array)
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(418): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#3 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), false)
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1459): CActiveRecord->query(Object(CDbCriteria))
+#5 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/components/UserIdentity.php(27): CActiveRecord->findByAttributes(Array)
+#6 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#7 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#8 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#9 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#10 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/controllers/SiteController.php(94): CModel->validate()
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#13 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#16 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#17 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/site/login
+HTTP_REFERER=http://localhost/testdrive/index.php/site/login
+---
+2012/09/19 15:40:30 [error] [exception.CDbException] exception 'CDbException' with message 'Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias.' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php:940
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(1232): CJoinElement->getColumnSelect(Array)
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(418): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#3 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), false)
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1459): CActiveRecord->query(Object(CDbCriteria))
+#5 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/components/UserIdentity.php(27): CActiveRecord->findByAttributes(Array)
+#6 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/models/UserLogin.php(52): UserIdentity->authenticate()
+#7 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CInlineValidator.php(43): UserLogin->authenticate('password', Array)
+#8 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(UserLogin), 'password')
+#9 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModel.php(158): CValidator->validate(Object(UserLogin), NULL)
+#10 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/controllers/LoginController.php(19): CModel->validate()
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/actions/CInlineAction.php(50): LoginController->actionLogin()
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#13 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('')
+#16 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#17 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/user/login
+HTTP_REFERER=http://localhost/testdrive/index.php/user/login
+---
+2012/09/19 15:46:05 [error] [exception.CDbException] exception 'CDbException' with message 'Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias.' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php:940
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(1232): CJoinElement->getColumnSelect(Array)
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(418): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#3 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), false)
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1459): CActiveRecord->query(Object(CDbCriteria))
+#5 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/components/UserIdentity.php(27): CActiveRecord->findByAttributes(Array)
+#6 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/models/UserLogin.php(52): UserIdentity->authenticate()
+#7 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CInlineValidator.php(43): UserLogin->authenticate('password', Array)
+#8 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(UserLogin), 'password')
+#9 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModel.php(158): CValidator->validate(Object(UserLogin), NULL)
+#10 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/controllers/LoginController.php(19): CModel->validate()
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/actions/CInlineAction.php(50): LoginController->actionLogin()
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#13 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('')
+#16 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#17 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/user/login
+HTTP_REFERER=http://localhost/testdrive/index.php/user/login
+---
+2012/09/19 15:52:28 [error] [exception.CDbException] exception 'CDbException' with message 'Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias.' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php:940
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(1232): CJoinElement->getColumnSelect('user.id, user.u...')
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(418): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#3 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), true)
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#5 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/UserModule.php(209): CActiveRecord->findAll()
+#6 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/controllers/AdminController.php(29): UserModule::getAdmins()
+#7 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(1145): AdminController->accessRules()
+#8 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('')
+#13 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/admin')
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/user/admin
+---
+2012/09/19 15:57:15 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii_testdrive.authitem' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM AuthItem.
+in /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/rights/components/RInstaller.php (180)
+in /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/rights/controllers/InstallController.php (43)
+in /Users/AK/Developer/sandbox/fooproject/testdrive/index.php (13)
+2012/09/19 15:57:28 [error] [exception.CDbException] exception 'CDbException' with message 'Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias.' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php:940
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(1232): CJoinElement->getColumnSelect(Array)
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(418): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#3 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), false)
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/ar/CActiveRecord.php(1459): CActiveRecord->query(Object(CDbCriteria))
+#5 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/components/UserIdentity.php(27): CActiveRecord->findByAttributes(Array)
+#6 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/models/UserLogin.php(52): UserIdentity->authenticate()
+#7 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CInlineValidator.php(43): UserLogin->authenticate('password', Array)
+#8 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(UserLogin), 'password')
+#9 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModel.php(158): CValidator->validate(Object(UserLogin), NULL)
+#10 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/controllers/LoginController.php(19): CModel->validate()
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/actions/CInlineAction.php(50): LoginController->actionLogin()
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#13 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('')
+#16 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#17 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/user/login
+HTTP_REFERER=http://localhost/testdrive/index.php/user/login
+---
+2012/09/19 15:58:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii_testdrive.authassignment' doesn't exist. The SQL statement executed was: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid.
+in /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/rights/components/RAuthorizer.php (341)
+in /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/rights/components/RWebUser.php (21)
+in /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/models/UserLogin.php (57)
+2012/09/19 15:58:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii_testdrive.authassignment' doesn't exist. The SQL statement executed was: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid' in /Users/AK/Developer/sandbox/fooproject/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/auth/CDbAuthManager.php(338): CDbCommand->queryAll()
+#2 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/rights/components/RAuthorizer.php(341): CDbAuthManager->getAuthAssignments('1')
+#3 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/rights/components/RWebUser.php(21): RAuthorizer->isSuperuser('1')
+#4 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/auth/CWebUser.php(239): RWebUser->afterLogin(false)
+#5 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/models/UserLogin.php(57): CWebUser->login(Object(UserIdentity), 0)
+#6 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CInlineValidator.php(43): UserLogin->authenticate('password', Array)
+#7 /Users/AK/Developer/sandbox/fooproject/yii/framework/validators/CValidator.php(214): CInlineValidator->validateAttribute(Object(UserLogin), 'password')
+#8 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CModel.php(158): CValidator->validate(Object(UserLogin), NULL)
+#9 /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/user/controllers/LoginController.php(19): CModel->validate()
+#10 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/actions/CInlineAction.php(50): LoginController->actionLogin()
+#11 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#13 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(283): CController->run('')
+#15 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#16 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/testdrive/index.php/user/login
+HTTP_REFERER=http://localhost/testdrive/index.php/user/login
+---
+2012/09/19 15:58:30 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii_testdrive.authitem' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM AuthItem.
+in /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/rights/components/RInstaller.php (180)
+in /Users/AK/Developer/sandbox/fooproject/testdrive/protected/modules/rights/controllers/InstallController.php (43)
+in /Users/AK/Developer/sandbox/fooproject/testdrive/index.php (13)
+2012/09/19 16:03:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights".' in /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('rights')
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/rights
+---
+2012/09/19 16:03:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights".' in /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('rights')
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/rights
+---
+2012/09/19 16:04:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights".' in /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('rights')
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/rights/
+---
+2012/09/19 16:04:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights".' in /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('rights')
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/rights/
+---
+2012/09/19 16:04:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights/assignment".' in /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('rights/assignme...')
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/rights/assignment
+---
+2012/09/19 16:04:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rights".' in /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/AK/Developer/sandbox/fooproject/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('rights')
+#1 /Users/AK/Developer/sandbox/fooproject/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/AK/Developer/sandbox/fooproject/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/rights
+---
