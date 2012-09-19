@@ -1,0 +1,5 @@
+This is a yii 1.1 starter project. It comes with two extensions: user and rights pre-installed.
+Installation:
+- clone the project
+- create database name: yii_testdrive
+- execute yii_testdrive.sql found in the project root directory to populate the tables

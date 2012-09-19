@@ -1,0 +1,5 @@
+testdirve/assets/*
+!testdrive/assets/.gitignore
+testdrive/protected/runtime/*
+!testdrive/protected/runtime/.gitignore
+testdrive/protected/data/*.db
