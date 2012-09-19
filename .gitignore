@@ -1,4 +1,4 @@
-testdirve/assets/*
+testdrive/assets/*
 !testdrive/assets/.gitignore
 testdrive/protected/runtime/*
 !testdrive/protected/runtime/.gitignore
